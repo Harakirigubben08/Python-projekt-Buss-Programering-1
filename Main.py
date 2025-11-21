@@ -15,9 +15,11 @@ class Person():
     """ Person är en klass för att representera personer i bussen. Varje objekt
     som skapas ur klassen har ett namn och en ålder, samt metoder för att returnera
     alternativt modifiera respektive attribut. """
-    def __init__(self, namn, ålder):
+    def __init__(self, namn, catchphrase, ålder, busighet):
         self.namn = namn
         self.ålder = ålder
+        self.busighet = busighet
+        self.catchphrase = Catchphrase
 
     # Strängrepresentation av objektet.
     def __str__(self):
@@ -79,7 +81,6 @@ def peta(passagerare):
 
 # ------------------------------ Huvudprogram --------------------------------- #
 def main():
-
     menyVal = ""
 
     while menyVal != "q":
