@@ -82,7 +82,35 @@ def peta(passagerare):
 
 # ------------------------------ Huvudprogram --------------------------------- #
 def main():
-    passagerare = []
+    p1 = Person("Marre Maräng", "Hurru du din marängskalle", 0.8, 13)
+    p2 = Person("Virre", "Snurr snurr", 0.2, 19)
+    p3 = Person("Virre", "Snurr snurr", 0.2, 19)
+    p4 = Person("Virre", "Snurr snurr", 0.2, 19)
+    p5 = Person("Virre", "Snurr snurr", 0.2, 19)
+    p6 = Person("Virre", "Snurr snurr", 0.2, 19)
+    p7 = Person("Virre", "Snurr snurr", 0.2, 19)
+    p8 = Person("Virre", "Snurr snurr", 0.2, 19)
+    p9 = Person("Virre", "Snurr snurr", 0.2, 19)
+    p10 = Person("Virre", "Snurr snurr", 0.2, 19)
+    p11 = Person("Virre", "Snurr snurr", 0.2, 19)
+    p12 = Person("Virre", "Snurr snurr", 0.2, 19)
+    p13 = Person("Virre", "Snurr snurr", 0.2, 19)
+    p14 = Person("Virre", "Snurr snurr", 0.2, 19)
+    p15 = Person("Virre", "Snurr snurr", 0.2, 19)
+    p16 = Person("Virre", "Snurr snurr", 0.2, 19)
+    p17 = Person("Virre", "Snurr snurr", 0.2, 19)
+    p18 = Person("Virre", "Snurr snurr", 0.2, 19)
+    p19 = Person("Virre", "Snurr snurr", 0.2, 19)
+    p20 = Person("Virre", "Snurr snurr", 0.2, 19)
+    p21 = Person("Virre", "Snurr snurr", 0.2, 19)
+    p22 = Person("Virre", "Snurr snurr", 0.2, 19)
+    p23 = Person("Virre", "Snurr snurr", 0.2, 19)
+    p24 = Person("Virre", "Snurr snurr", 0.2, 19)
+    p25 = Person("Virre", "Snurr snurr", 0.2, 19)
+    
+    
+    
+    
     menyVal = ""
 
     while menyVal != "q":
