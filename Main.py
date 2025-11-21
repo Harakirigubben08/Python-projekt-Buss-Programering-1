@@ -10,6 +10,7 @@ lagrar passagerare i en lista(Det kan ju en apa förstå).
 # ------------------------- Biblioteksimportering ----------------------------- #
 import random as rand
 
+print("Hej")
 # ---------------------------- Klassdefinitioner ------------------------------ #
 class Person():
     """ Person är en klass för att representera personer i bussen. Varje objekt
