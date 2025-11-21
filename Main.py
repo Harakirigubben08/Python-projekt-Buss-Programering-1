@@ -18,6 +18,8 @@ class Person():
     def __init__(self, namn, ålder):
         self.namn = namn
         self.ålder = ålder
+        self.busighet = busighet
+        self.catchphrase = catchphrase
 
     # Strängrepresentation av objektet.
     def __str__(self):
