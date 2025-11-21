@@ -44,6 +44,8 @@ class Person():
 
 # Lägger till en ny person i bussen.
 def plockaUpp(passagerare):
+    namn = input ("namn -->").strip
+     
     return
 
 # Avlägsnar en person från bussen.
