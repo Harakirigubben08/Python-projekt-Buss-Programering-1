@@ -5,7 +5,7 @@ Titel: Bussen
 Författare:Emil och vilgot
 Datum: en kväll i juni
 Det här är ett program för hantering av passagerare på en buss. Programmet
-lagrar passagerare i en lista.
+lagrar passagerare i en lista(Det kan ju en apa förstå).
 """
 # ------------------------- Biblioteksimportering ----------------------------- #
 import random as rand
@@ -15,11 +15,9 @@ class Person():
     """ Person är en klass för att representera personer i bussen. Varje objekt
     som skapas ur klassen har ett namn och en ålder, samt metoder för att returnera
     alternativt modifiera respektive attribut. """
-    def __init__(self, namn, catchphrase, ålder, busighet):
+    def __init__(self, namn, ålder):
         self.namn = namn
         self.ålder = ålder
-        self.busighet = busighet
-        self.catchphrase = Catchphrase
 
     # Strängrepresentation av objektet.
     def __str__(self):
@@ -81,6 +79,7 @@ def peta(passagerare):
 
 # ------------------------------ Huvudprogram --------------------------------- #
 def main():
+    passagerare = []
     menyVal = ""
 
     while menyVal != "q":
