@@ -34,7 +34,7 @@ class Person():
 
     # Strängrepresentation av objektet.
     def __str__(self):
-        return f"Det här är {self.namn}.Dennes catchphrase är {self.catchphrase}. Hen är såhär busig på skalan 0-1 {self.busighet} Hen är {self.ålder} år gammal."
+        return f" Jag är {self.namn}.\n Min catchphrase är {self.catchphrase}. \n jag är {self.busighet} busig på skalan 0-1 \n jag är {self.ålder} år gammal.\n"
 
     # Setters
     def setNamn(self, nyttNamn):
@@ -56,8 +56,8 @@ class Person():
 def plockaUpp(buss):
     namn = str(input ("namn -->"))
     catchphrase = str(input("Vad ska karaktärens Catchphrase vara?-->"))
-    busighet = float(input("På en skala 0 till 5 hur busig är personen?-->"))
-    ålder= input("Hur gammal är passageraren?")
+    busighet = float(input("På en skala 0 till 1 hur busig är personen?-->"))
+    ålder= input("Hur gammal är passageraren?-->")
 
     ny_passagerare=Person(namn,catchphrase,busighet,ålder) 
     buss.append(ny_passagerare)
