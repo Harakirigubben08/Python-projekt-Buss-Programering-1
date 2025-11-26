@@ -9,6 +9,7 @@ lagrar passagerare i en lista(Det kan ju en apa förstå).
 """
 # ------------------------- Biblioteksimportering ----------------------------- #
 import random as rand
+import math as meth
 
 print("Hej")
 # ---------------------------- Klassdefinitioner ------------------------------ #
@@ -49,8 +50,8 @@ def plockaUpp(buss):
     busighet = float(input("På en skala 0 till 5 hur busig är personen?-->"))
     ålder= input("Hur gammal är passageraren?")
 
-    nypassagerare=Person(namn,catchphrase,busighet,ålder) 
-    buss.append(nypassagerare)
+    ny_passagerare=Person(namn,catchphrase,busighet,ålder) 
+    buss.append(ny_passagerare)
 
     return buss 
 
@@ -63,9 +64,11 @@ def skrivUt():
     return
 
 # Skriver ut den sammanlagda åldern på passagerarna.
-def sammanlagdÅlder():
-    return
-
+def sammanlagdÅlder(buss):
+    total_ålder = 0
+    for passagerare in buss:
+        total_ålder += int(passagerare.getÅlder())
+    return total_ålder
 # Skriver ut medelåldern på passagerarna i bussen.
 def medelÅlder():
     return
@@ -92,33 +95,11 @@ def peta(passagerare):
 def main():
     p1 = Person("Marre Maräng", "Hurru du din marängskalle", 0.8, 13)
     p2 = Person("Virre", "Snurr snurr", 0.2, 19)
-    p3 = Person("Virre", "Snurr snurr", 0.2, 19)
-    p4 = Person("Virre", "Snurr snurr", 0.2, 19)
-    p5 = Person("Virre", "Snurr snurr", 0.2, 19)
-    p6 = Person("Virre", "Snurr snurr", 0.2, 19)
-    p7 = Person("Virre", "Snurr snurr", 0.2, 19)
-    p8 = Person("Virre", "Snurr snurr", 0.2, 19)
-    p9 = Person("Virre", "Snurr snurr", 0.2, 19)
-    p10 = Person("Virre", "Snurr snurr", 0.2, 19)
-    p11 = Person("Virre", "Snurr snurr", 0.2, 19)
-    p12 = Person("Virre", "Snurr snurr", 0.2, 19)
-    p13 = Person("Virre", "Snurr snurr", 0.2, 19)
-    p14 = Person("Virre", "Snurr snurr", 0.2, 19)
-    p15 = Person("Virre", "Snurr snurr", 0.2, 19)
-    p16 = Person("Virre", "Snurr snurr", 0.2, 19)
-    p17 = Person("Virre", "Snurr snurr", 0.2, 19)
-    p18 = Person("Virre", "Snurr snurr", 0.2, 19)
-    p19 = Person("Virre", "Snurr snurr", 0.2, 19)
-    p20 = Person("Virre", "Snurr snurr", 0.2, 19)
-    p21 = Person("Virre", "Snurr snurr", 0.2, 19)
-    p22 = Person("Virre", "Snurr snurr", 0.2, 19)
-    p23 = Person("Virre", "Snurr snurr", 0.2, 19)
-    p24 = Person("Virre", "Snurr snurr", 0.2, 19)
-    p25 = Person("Virre", "Snurr snurr", 0.2, 19)
+    p3 = Person("Lellegamer22", "Vart är donken?", 0.7, 9)
+    p4 = Person("Lennart Bladh", "Dumma grodyngel", 0.9, 62)
     
     
-    
-    buss = []
+    buss = [p1,p2,p3,p4]
     menyVal = ""
 
     while menyVal != "q":
@@ -152,6 +133,10 @@ def main():
         elif menyVal == "3":
             pass
         elif menyVal == "4":
+            Åldertot = sammanlagdÅlder(buss)
+            
+            print(Åldertot)
+
             pass
         elif menyVal == "5":
             pass
