@@ -11,7 +11,16 @@ lagrar passagerare i en lista(Det kan ju en apa förstå).
 import random as rand
 import math as meth
 
-print("Hej")
+#-------------------------------Buss utskrivt-----------------------------------#
+
+print(
+        """
+                         _____________     _____________                              /
+                       _/_|[][][][][] |   /|[][][][][][]\    |       Transport       /
+                      (      Bussen   |  / Djurtransport \   |______________________/
+                      =--OO-------OO--=@--=-OO--------OO--=-@--OO--------------OOO--|
+        """)
+
 # ---------------------------- Klassdefinitioner ------------------------------ #
 class Person():
     """ Person är en klass för att representera personer i bussen. Varje objekt
@@ -25,7 +34,7 @@ class Person():
 
     # Strängrepresentation av objektet.
     def __str__(self):
-        return f"Det här är {self.namn}. Hen är {self.ålder} år gammal."
+        return f"Det här är {self.namn}.Dennes catchphrase är {self.catchphrase}. Hen är såhär busig på skalan 0-1 {self.busighet} Hen är {self.ålder} år gammal."
 
     # Setters
     def setNamn(self, nyttNamn):
@@ -45,8 +54,8 @@ class Person():
 
 # Lägger till en ny person i bussen.
 def plockaUpp(buss):
-    namn = str(input ("namn -->").strip)
-    catchphrase = str(input("Vad ska karaktärens Catchphrase vara?-->").strip)
+    namn = str(input ("namn -->"))
+    catchphrase = str(input("Vad ska karaktärens Catchphrase vara?-->"))
     busighet = float(input("På en skala 0 till 5 hur busig är personen?-->"))
     ålder= input("Hur gammal är passageraren?")
 
@@ -56,11 +65,16 @@ def plockaUpp(buss):
     return buss 
 
 # Avlägsnar en person från bussen.
-def gåAv(passagerare):
+def gåAv(buss):
     return
 
 # Listar alla passagerare på bussen.
-def skrivUt():
+def skrivUt(buss):
+    a = len(buss)
+    for i in range(a):
+        print(buss[i-1])
+        i+=1
+
     return
 
 # Skriver ut den sammanlagda åldern på passagerarna.
@@ -108,20 +122,14 @@ def main():
         """
                                          --- MENY ---
                     Välkommen till buss-simulatorn. Välj ett av alternativen nedan:
-            1. Plocka upp ny passagerare                        2. Låt passagerare gå av
-            3. Skriv ut alla passagerare                        4. Beräkna sammanlagd ålder
-            4. Beräkna medelåldern                              5. Hitta äldst person
-            6. Sortera bussen                                   7. Hitta personer inom ett specifikt åldersspann
-            8. Peta på passagerare                              q. Avsluta
+            1. Plocka upp ny passagerare                  2. Låt passagerare gå av
+            3. Skriv ut alla passagerare                  4. Beräkna sammanlagd ålder
+            4. Beräkna medelåldern                        5. Hitta äldst person
+            6. Sortera bussen                             7. Hitta personer inom ett specifikt åldersspann
+            8. Peta på passagerare                        q. Avsluta
         ---------------------------------------------------------------------------------------
         """)
-        print(
-        """
-                         _____________     _____________                              /
-                       _/_|[][][][][] |   /|[][][][][][]\    |       Transport       /
-                      (      Bussen   |  / Djurtransport \   |______________________/
-                      =--OO-------OO--=@--=-OO--------OO--=-@--OO--------------OOO--|
-        """)
+
 
         menyVal = input("-> ")
 
@@ -129,8 +137,10 @@ def main():
             buss = plockaUpp(buss)
             pass
         elif menyVal == "2":
+            buss= gåAv(buss)
             pass
         elif menyVal == "3":
+            skrivUt(buss)
             pass
         elif menyVal == "4":
             Åldertot = sammanlagdÅlder(buss)
