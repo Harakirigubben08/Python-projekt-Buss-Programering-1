@@ -83,6 +83,7 @@ def sammanlagdÅlder(buss):
     for passagerare in buss:
         total_ålder += int(passagerare.getÅlder())
     return total_ålder
+
 # Skriver ut medelåldern på passagerarna i bussen.
 def medelÅlder(buss):
     total_ålder = 0
@@ -150,9 +151,10 @@ def main():
         elif menyVal == "4":
             Åldertot = sammanlagdÅlder(buss)
             print(Åldertot)
-
             pass
         elif menyVal == "5":
+            Åldersam = medelÅlder(buss)
+            print(Åldersam)
             pass
         elif menyVal == "6":
             pass
