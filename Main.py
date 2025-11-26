@@ -66,7 +66,9 @@ def plockaUpp(buss):
 
 # Avlägsnar en person från bussen.
 def gåAv(buss):
-    return
+    attgåav = int(input("Vem ska gå av?-->"))
+    del(buss[attgåav-1]) 
+    return buss
 
 # Listar alla passagerare på bussen.
 def skrivUt(buss):
@@ -173,6 +175,7 @@ def main():
         elif menyVal == "8":
             pass 
         elif menyVal == "9":
+            catchphrase = peta
             pass   
 
 
