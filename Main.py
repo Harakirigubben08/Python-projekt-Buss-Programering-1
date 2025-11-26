@@ -84,8 +84,13 @@ def sammanlagdÅlder(buss):
         total_ålder += int(passagerare.getÅlder())
     return total_ålder
 # Skriver ut medelåldern på passagerarna i bussen.
-def medelÅlder():
-    return
+def medelÅlder(buss):
+    total_ålder = 0
+    for passagerare in buss:
+        total_ålder += int(passagerare.getÅlder())
+    medel_ålder = total_ålder/len(buss)
+    return medel_ålder
+    
 
 # Skriver ut personen som är äldst på bussen.
 def äldst():
@@ -124,9 +129,9 @@ def main():
                     Välkommen till buss-simulatorn. Välj ett av alternativen nedan:
             1. Plocka upp ny passagerare                  2. Låt passagerare gå av
             3. Skriv ut alla passagerare                  4. Beräkna sammanlagd ålder
-            4. Beräkna medelåldern                        5. Hitta äldst person
-            6. Sortera bussen                             7. Hitta personer inom ett specifikt åldersspann
-            8. Peta på passagerare                        q. Avsluta
+            5. Beräkna medelåldern                        6. Hitta äldst person
+            7. Sortera bussen                             8. Hitta personer inom ett specifikt åldersspann
+            9. Peta på passagerare                        q. Avsluta
         ---------------------------------------------------------------------------------------
         """)
 
@@ -144,7 +149,6 @@ def main():
             pass
         elif menyVal == "4":
             Åldertot = sammanlagdÅlder(buss)
-            
             print(Åldertot)
 
             pass
@@ -156,7 +160,8 @@ def main():
             pass
         elif menyVal == "8":
             pass 
-
+        elif menyVal == "9":
+            pass   
 
 
 main()
