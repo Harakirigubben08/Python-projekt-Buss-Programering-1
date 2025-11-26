@@ -14,7 +14,7 @@ print("Hej")
 # ---------------------------- Klassdefinitioner ------------------------------ #
 class Person():
     """ Person är en klass för att representera personer i bussen. Varje objekt
-    som skapas ur klassen har ett namn och en ålder, samt metoder för att returnera
+    som skapas ur klassen har ett namn, cathcphrase, ålder, busighetsnivå samt metoder för att returnera
     alternativt modifiera respektive attribut. """
     def __init__(self, namn,catchphrase, busighet, ålder):
         self.namn = namn
@@ -43,10 +43,16 @@ class Person():
 # ------------------------- Funktionsdefinitioner ---------------------------- #
 
 # Lägger till en ny person i bussen.
-def plockaUpp(passagerare):
-    namn = input ("namn -->").strip
-     
-    return
+def plockaUpp(buss):
+    namn = str(input ("namn -->").strip)
+    catchphrase = str(input("Vad ska karaktärens Catchphrase vara?-->").strip)
+    busighet = float(input("På en skala 0 till 5 hur busig är personen?-->"))
+    ålder= input("Hur gammal är passageraren?")
+
+    nypassagerare=Person(namn,catchphrase,busighet,ålder) 
+    buss.append(nypassagerare)
+
+    return buss 
 
 # Avlägsnar en person från bussen.
 def gåAv(passagerare):
@@ -112,7 +118,7 @@ def main():
     
     
     
-    
+    buss = []
     menyVal = ""
 
     while menyVal != "q":
@@ -139,6 +145,7 @@ def main():
         menyVal = input("-> ")
 
         if menyVal == "1":
+            buss = plockaUpp(buss)
             pass
         elif menyVal == "2":
             pass
