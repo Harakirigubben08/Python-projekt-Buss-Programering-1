@@ -94,8 +94,12 @@ def medelÅlder(buss):
     
 
 # Skriver ut personen som är äldst på bussen.
-def äldst():
-    return
+def äldst(buss):
+    äldsta_passagerare = buss[0]
+    for passagerare in buss:
+        if int(passagerare.getÅlder()) > int(äldsta_passagerare.getÅlder()):
+            äldsta_passagerare = passagerare
+    return äldsta_passagerare
 
 # Sorterar bussen, antingen efter namn i bokstavsordning eller efter ålder.
 def busSort():
@@ -161,6 +165,8 @@ def main():
             print(Åldersam)
             pass
         elif menyVal == "6":
+            Ålderäld = äldst(buss)
+            print(Ålderäld)
             pass
         elif menyVal == "7":
             pass
