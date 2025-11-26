@@ -140,8 +140,12 @@ def main():
         menyVal = input("-> ")
 
         if menyVal == "1":
-            buss = plockaUpp(buss)
-            pass
+            if len(buss) < 25:
+                buss = plockaUpp(buss)
+                pass
+            else: 
+                print("bussen är full testa något annat")
+                pass
         elif menyVal == "2":
             buss= gåAv(buss)
             pass
