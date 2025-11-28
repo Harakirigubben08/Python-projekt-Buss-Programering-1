@@ -93,7 +93,7 @@ def plockaUpp(buss):
 
 # Avlägsnar en person från bussen.
 def gåAv(buss):
-    attgåav = int(input("Vem ska gå av?-->"))
+    attgåav = Hanteradinput(int,"Vem ska gå av?-->")
     del(buss[attgåav-1]) 
     return buss
 
