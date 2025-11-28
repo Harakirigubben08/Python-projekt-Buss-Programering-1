@@ -3,7 +3,6 @@
 
 Titel: Bussen
 Författare:Emil och vilgot.
-Författare:Emil och Vilgot
 Datum: 2025/02/29
 Det här är ett program för hantering av passagerare på en buss. Programmet
 lagrar passagerare i en lista(Det kan ju en apa förstå).
