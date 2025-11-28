@@ -122,7 +122,7 @@ def main():
     p1 = Person("Marre Maräng", "Hurru du din marängskalle", 0.8, 13)
     p2 = Person("Virre", "Snurr snurr", 0.2, 19)
     p3 = Person("Lellegamer22", "Vart är donken?", 0.7, 9)
-    p4 = Person("Lennart Bladh", "Hi again.")
+    p4 = Person("Lennart Bladh", "Hi again.", 0.9, 62 )
                 
     
     buss = [p1,p2,p3,p4]
