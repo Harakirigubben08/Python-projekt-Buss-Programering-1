@@ -75,7 +75,7 @@ def skrivUt(buss):
     a = len(buss)
     for i in range(a):
         print(buss[i-1])
-        i+=1
+        i +=1
 
     return
 
@@ -96,12 +96,8 @@ def medelÅlder(buss):
     
 
 # Skriver ut personen som är äldst på bussen.
-def äldst(buss):
-    äldsta_passagerare = buss[0]
-    for passagerare in buss:
-        if int(passagerare.getÅlder()) > int(äldsta_passagerare.getÅlder()):
-            äldsta_passagerare = passagerare
-    return äldsta_passagerare
+def äldst():
+    return
 
 # Sorterar bussen, antingen efter namn i bokstavsordning eller efter ålder.
 def busSort():
@@ -124,6 +120,8 @@ def main():
     p3 = Person("Lellegamer22", "Vart är donken?", 0.7, 9)
     p4 = Person("Lennart Bladh", "Hi again.", 0.9, 62 )
                 
+    p4 = Person("Lennart Bladh", "Dumma grodyngel", 0.9, 62)
+    
     
     buss = [p1,p2,p3,p4]
     menyVal = ""
@@ -167,8 +165,6 @@ def main():
             print(Åldersam)
             pass
         elif menyVal == "6":
-            Ålderäld = äldst(buss)
-            print(Ålderäld)
             pass
         elif menyVal == "7":
             pass
