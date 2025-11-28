@@ -52,21 +52,48 @@ class Person():
 
 # ------------------------- Funktionsdefinitioner ---------------------------- #
 
+# Plockar in en felhanterad input, kräver vilken variabeltyp samt vad man vill veta
+def Hanteradinput(variabeltyp, fråga):
+    while True:
+        try:
+            svar = input(f"{fråga}") 
+            if variabeltyp == int:
+                rätt=int(svar)
+                return rätt
+            elif variabeltyp == str:
+                rätt =str(svar)
+                return rätt
+            elif variabeltyp == float:
+                rätt = float(svar)
+                return rätt
+            elif variabeltyp == bool:
+                rätt = bool(svar)
+                return rätt
+            else:
+                print("läs frågan och svara rätt din mupp!!!")
+        except ValueError:
+            print("Gör rätt din mupp!!!")
+           
+
+
 # Lägger till en ny person i bussen.
 def plockaUpp(buss):
-    namn = str(input ("namn -->"))
-    catchphrase = str(input("Vad ska karaktärens Catchphrase vara?-->"))
-    busighet = float(input("På en skala 0 till 1 hur busig är personen?-->"))
-    ålder= input("Hur gammal är passageraren?-->")
+    namn = Hanteradinput(str,"Vad heter karaktären?-->")
+    catchphrase = Hanteradinput(str,"Vad är karaktärens Catchphrase?-->")
+    busighet = float(input("På en skala 0-1 hur busig är karaktären? -->"))
+    if busighet < 0 or busighet > 1:
+        raise ValueError 
+    else:
+        ålder= Hanteradinput(float,"Hur gammal är karaktären?-->")
 
-    ny_passagerare=Person(namn,catchphrase,busighet,ålder) 
-    buss.append(ny_passagerare)
+        ny_passagerare=Person(namn,catchphrase,busighet,ålder) 
+        buss.append(ny_passagerare)
 
-    return buss 
+        return buss 
 
 # Avlägsnar en person från bussen.
 def gåAv(buss):
-    attgåav = int(input("Vem ska gå av?-->"))
+    attgåav = Hanteradinput(int,"Vem ska gå av?-->")
     del(buss[attgåav-1]) 
     return buss
 
