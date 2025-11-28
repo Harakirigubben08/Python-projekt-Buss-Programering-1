@@ -2,6 +2,7 @@
 ------------------------------- Information --------------------------------
 
 Titel: Bussen
+Författare:Emil och vilgot.
 Författare:Emil och Vilgot
 Datum: 2025/02/29
 Det här är ett program för hantering av passagerare på en buss. Programmet
@@ -168,6 +169,8 @@ def main():
             print(Åldersam)
             pass
         elif menyVal == "6":
+            Ålderäld = äldst(buss)
+            print(Ålderäld)
             pass
         elif menyVal == "7":
             pass
