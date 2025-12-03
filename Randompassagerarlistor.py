@@ -1,5 +1,5 @@
-Förnamn = ["Emil","Vilgot","Frej","Martin","Lelle","Peter","Johannes","Nikodemus","Anna","Ellie","Maria","Kenneth","pher"]
-Efternamn = ["Åhman","Åman","Sundin","Hedenhös","Svedenmärkt","Théssen","Peterberg","Ahmmoudsson","Trump","Gatenmalm"]
+Förnamn = ["Emil ","Vilgot ","Frej ","Martin ","Lelle ","Peter ","Johannes ","Nikodemus ","Anna ","Ellie ","Maria ","Kenneth ","Pher ","Erland ","Leopold ","Mimmie ","Ann-Catrin "]
+Efternamn = ["Åhman","Åman","Sundin","Hedenhös","Svedenmärkt","Théssen","Peterberg","Ahmmoudsson","Trump","Gatenmalm","Jansson","Bergling",""]
 Catchphrase =["Rör mig igen och jag biter av dig fingret och använder det som tandpetare!",
     "Det där var min lever, tack för påminnelsen om att jag behöver donera den snart.",
     "Petar du en gång till så sprutar jag pus ur alla porer som en överkokt korv.",
@@ -12,3 +12,4 @@ Catchphrase =["Rör mig igen och jag biter av dig fingret och använder det som 
     "Bra jobbat, nu har du väckt min inre demon... och den är jävligt kittlig.",
     "梨是健康的."
 ]
+Busighet = [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]

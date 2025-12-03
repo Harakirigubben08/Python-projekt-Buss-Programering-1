@@ -2,7 +2,7 @@
 ------------------------------- Information --------------------------------
 
 Titel: Bussen
-Författare:Emil och vilgot.
+Författare:Emil och vilgot Su.
 Datum: 2025/02/29
 Det här är ett program för hantering av passagerare på en buss. Programmet
 lagrar passagerare i en lista(Det kan ju en apa förstå).
@@ -10,6 +10,7 @@ lagrar passagerare i en lista(Det kan ju en apa förstå).
 # ------------------------- Biblioteksimportering ----------------------------- #
 import random as rand
 import math as meth
+from Randompassagerarlistor import*
 
 #-------------------------------Buss utskrivt-----------------------------------#
 
@@ -52,6 +53,35 @@ class Person():
 
 # ------------------------- Funktionsdefinitioner ---------------------------- #
 
+#Funktionen som låter operatören lägga in helt egna passagerare
+def Egenplockaupp(buss):
+        namn = Hanteradinput(str,"Vad heter karaktären?-->")
+        catchphrase = Hanteradinput(str,"Vad är karaktärens Catchphrase?-->")
+        busighet = float(input("På en skala 0-1 hur busig är karaktären? -->"))
+        if busighet < 0 or busighet > 1:
+            raise ValueError 
+        else:
+            ålder= Hanteradinput(float,"Hur gammal är karaktären?-->")
+
+        ny_passagerare=Person(namn,catchphrase,busighet,ålder) 
+        buss.append(ny_passagerare)
+
+        return buss 
+
+#Funktionen som slumpar fram en ny passagerare ur ett antal listor
+def Slumpplockaupp(buss):
+    namn = rand.choice(Förnamn) + rand.choice(Efternamn)
+    catchphrase = rand.choice(Catchphrase)
+    busighet = rand.choice(Busighet)
+    ålder = rand.randint(0, 155)
+    ny_passagerare=Person(namn,catchphrase,busighet,ålder) 
+    buss.append(ny_passagerare)
+    
+    return buss     
+
+
+
+
 # Plockar in en felhanterad input, kräver vilken variabeltyp samt vad man vill veta
 def Hanteradinput(variabeltyp, fråga):
     while True:
@@ -78,18 +108,21 @@ def Hanteradinput(variabeltyp, fråga):
 
 # Lägger till en ny person i bussen.
 def plockaUpp(buss):
-    namn = Hanteradinput(str,"Vad heter karaktären?-->")
-    catchphrase = Hanteradinput(str,"Vad är karaktärens Catchphrase?-->")
-    busighet = float(input("På en skala 0-1 hur busig är karaktären? -->"))
-    if busighet < 0 or busighet > 1:
-        raise ValueError 
-    else:
-        ålder= Hanteradinput(float,"Hur gammal är karaktären?-->")
+    Generationsalt = int(input("Välj 1 för att skapa en egen passagerare och 2 för att slumpa fram den-->"))
+    while True:
+        try:
+            if Generationsalt == 1:
+                buss = Egenplockaupp(buss)
+                return buss
+            elif Generationsalt == 2:
+                buss = Slumpplockaupp(buss)
+                return buss
+            else:
+                print("läs frågan och svara rätt")
 
-        ny_passagerare=Person(namn,catchphrase,busighet,ålder) 
-        buss.append(ny_passagerare)
-
-        return buss 
+        except ValueError:
+            print("Gör rätt din mupp!!!")
+    return buss
 
 # Avlägsnar en person från bussen.
 def gåAv(buss):
