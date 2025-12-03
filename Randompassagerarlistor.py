@@ -1,0 +1,14 @@
+Förnamn = ["Emil","Vilgot","Frej","Martin","Lelle","Peter","Johannes","Nikodemus","Anna","Ellie","Maria","Kenneth","pher"]
+Efternamn = ["Åhman","Åman","Sundin","Hedenhös","Svedenmärkt","Théssen","Peterberg","Ahmmoudsson","Trump","Gatenmalm"]
+Catchphrase =["Rör mig igen och jag biter av dig fingret och använder det som tandpetare!",
+    "Det där var min lever, tack för påminnelsen om att jag behöver donera den snart.",
+    "Petar du en gång till så sprutar jag pus ur alla porer som en överkokt korv.",
+    "Åh nej, nu väckte du parasiterna... de blir hungriga när man petar.",
+    "Grattis, du har precis aktiverat min inre zombie – nu måste jag äta hjärna.",
+    "Sluta! Jag är inte en knapp, jag är en mänsklig landmina med kroppsvätskor!",
+    "Du anar inte hur nära du var att trycka på 'släpp lös tarminnehållet'-knappen.",
+    "Fasen, nu läcker jag igen... det är tredje gången den här veckan.",
+    "Petar du en gång till så lovar jag att hosta upp något som har eget personnummer.",
+    "Bra jobbat, nu har du väckt min inre demon... och den är jävligt kittlig.",
+    "梨是健康的."
+]
