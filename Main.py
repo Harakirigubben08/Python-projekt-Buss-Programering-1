@@ -108,21 +108,18 @@ def Hanteradinput(variabeltyp, fråga):
 
 # Lägger till en ny person i bussen.
 def plockaUpp(buss):
-    Generationsalt = int(input("Välj 1 för att skapa en egen passagerare och 2 för att slumpa fram den-->"))
-    while True:
-        try:
-            if Generationsalt == 1:
-                buss = Egenplockaupp(buss)
-                return buss
-            elif Generationsalt == 2:
-                buss = Slumpplockaupp(buss)
-                return buss
-            else:
-                print("läs frågan och svara rätt")
-
-        except ValueError:
-            print("Gör rätt din mupp!!!")
-    return buss
+    Generationsalt = Hanteradinput(int,"1 för att skapa egen karaktär 2 för att slumpa fram en.--> ")
+    if Generationsalt == 1:
+        Egenplockaupp(buss)
+        return(buss)
+    elif Generationsalt == 2:
+        Slumpplockaupp(buss)
+        return(buss)
+    else:
+        print("SYNTAX ERROR, Gör om gör rätt")
+        pass  
+        
+    
 
 # Avlägsnar en person från bussen.
 def gåAv(buss):
@@ -165,7 +162,7 @@ def äldst(buss):
 
 
 # Sorterar bussen, antingen efter namn i bokstavsordning eller efter ålder.
-def sort_buss(buss_lista, sortera_efter="ålder"):
+def sort_buss(buss_lista):
     print("\n--- Sortera bussen ---")
     val = input("Vill du sortera efter [n]amn eller [å]lder? (n/å) → ").lower()
     
@@ -175,8 +172,12 @@ def sort_buss(buss_lista, sortera_efter="ålder"):
     else:
         buss_lista.sort(key=lambda p: p.getÅlder())
         print("Bussen är nu sorterad efter ålder!")
-    
-    skriv_ut(buss_lista)  # Visa resultatet direkt
+
+    a = len(buss_lista)
+
+    for i in range(a):
+        print(f"Bussens passagerare är:{buss_lista[i-1]} \n")
+        i +=1
     return buss_lista
     
                 
@@ -249,8 +250,7 @@ def main():
             print(Ålderäld)
             pass
         elif menyVal == "7":
-            Sortera = sort_buss(buss)
-            print(f"{Sortera}")
+            buss = sort_buss(buss)
             pass
         elif menyVal == "8":
             pass 

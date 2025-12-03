@@ -1,4 +1,3 @@
-import random as rand
-from Randompassagerarlistor import*
-Namn = rand.choice(Förnamn) + rand.choice(Efternamn)
-print(Namn)
+l1 = ["A","B","c"]
+
+l1 = l1.s
