@@ -34,7 +34,7 @@ class Person():
 
     # Strängrepresentation av objektet.
     def __str__(self):
-        return f" Jag är {self.namn}.\n Min catchphrase är {self.catchphrase}. \n jag är {self.busighet} busig på skalan 0-1 \n jag är {self.ålder} år gammal.\n"
+        return f"{self.namn}.\n Min catchphrase är {self.catchphrase}. \n {self.busighet} busig på skalan 0-1 \n {self.ålder} år gammal.\n"
 
     # Setters
     def setNamn(self, nyttNamn):
@@ -101,7 +101,7 @@ def gåAv(buss):
 def skrivUt(buss):
     a = len(buss)
     for i in range(a):
-        print(buss[i-1])
+        print(f"Bussens passagerare är:{buss[i-1]} \n")
         i +=1
 
     return
@@ -123,22 +123,29 @@ def medelÅlder(buss):
     
 
 # Skriver ut personen som är äldst på bussen.
-    def äldst(buss):
-        äldsta_passagerare = buss[0]
-        for passagerare in buss:
-            if int(passagerare.getÅlder()) > int(äldsta_passagerare.getÅlder()):
-                äldsta_passagerare = passagerare
-        return äldsta_passagerare
+def äldst(buss):
+    äldsta_passagerare = buss[0]
+    for passagerare in buss:
+        if int(passagerare.getÅlder()) > int(äldsta_passagerare.getÅlder()):
+            äldsta_passagerare = passagerare
+    return äldsta_passagerare
 
 
 # Sorterar bussen, antingen efter namn i bokstavsordning eller efter ålder.
-    def bussort(buss):
-        äldsta_passagerare = buss[0]
-        for passagerare in buss:
-            if int(passagerare.getÅlder()) > int(äldsta_passagerare.getÅlder()):
-                äldsta_passagerare = passagerare
-        return äldsta_passagerare
-    äldsta_passagerare.remove(äldsta_passagerare)
+def sort_buss(buss_lista, sortera_efter="ålder"):
+    print("\n--- Sortera bussen ---")
+    val = input("Vill du sortera efter [n]amn eller [å]lder? (n/å) → ").lower()
+    
+    if val in ["n", "namn"]:
+        buss_lista.sort(key=lambda p: p.getNamn().lower())
+        print("Bussen är nu sorterad efter namn!")
+    else:
+        buss_lista.sort(key=lambda p: p.getÅlder())
+        print("Bussen är nu sorterad efter ålder!")
+    
+    skriv_ut(buss_lista)  # Visa resultatet direkt
+    return buss_lista
+    
                 
 
 
@@ -209,8 +216,8 @@ def main():
             print(Ålderäld)
             pass
         elif menyVal == "7":
-            Sortera = bussort(buss)
-            print(Sortera)
+            Sortera = sort_buss(buss)
+            print(f"{Sortera}")
             pass
         elif menyVal == "8":
             pass 
