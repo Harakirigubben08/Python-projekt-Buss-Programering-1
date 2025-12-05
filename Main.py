@@ -50,8 +50,11 @@ class Person():
 
     def getÅlder(self):
         return self.ålder
+    
+    def getCatchphrase(self):
+        return self.catchphrase
 
-# ------------------------- Funktionsdefinitioner ---------------------------- #
+#-------------------------Hjälpfunktionsdefiitioner---------------------------#
 
 #Funktionen som låter operatören lägga in helt egna passagerare
 def Egenplockaupp(buss):
@@ -80,8 +83,6 @@ def Slumpplockaupp(buss):
     return buss     
 
 
-
-
 # Plockar in en felhanterad input, kräver vilken variabeltyp samt vad man vill veta
 def Hanteradinput(variabeltyp, fråga):
     while True:
@@ -103,8 +104,18 @@ def Hanteradinput(variabeltyp, fråga):
                 print("läs frågan och svara rätt din mupp!!!")
         except ValueError:
             print("Gör rätt din mupp!!!")
-           
 
+# Sorterar bussen efter ålder
+def åldersortera(buss):
+    åldrar=[]
+    listlängd = len(buss)
+    for i in range listlängd: 
+        print("hejsan")
+        a += 1
+
+
+
+# ------------------------- Funktionsdefinitioner ---------------------------- #    
 
 # Lägger till en ny person i bussen.
 def plockaUpp(buss):
@@ -162,9 +173,22 @@ def äldst(buss):
 
 
 # Sorterar bussen, antingen efter busighet eller efter ålder.
-def sort_buss(buss_lista):
-    return sorted(buss_lista, key=lambda buss: buss["ålder"])
-    return sorted(buss_lista, key=lambda buss: buss.ålder)     
+def sort_buss(buss):
+    hursortera = Hanteradinput(str,("Vill du sortera listan med Namn eller ålder (n/å)? --> "))
+    
+    if hursortera == "n":
+
+        pass
+
+    elif  hursortera == "å":   
+        buss =åldersortera(buss)
+
+        return(buss)
+    else:
+        print("Hur svårt kan det vara??")
+        pass
+
+
     
     
                 
