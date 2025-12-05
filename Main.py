@@ -27,7 +27,7 @@ class Person():
     """ Person är en klass för att representera personer i bussen. Varje objekt
     som skapas ur klassen har ett namn, cathcphrase, ålder, busighetsnivå samt metoder för att returnera
     alternativt modifiera respektive attribut. """
-    def __init__(self, namn,catchphrase, busighet, ålder):
+    def __init__(self, namn, catchphrase, busighet, ålder):
         self.namn = namn
         self.ålder = ålder
         self.busighet = busighet
@@ -35,7 +35,7 @@ class Person():
 
     # Strängrepresentation av objektet.
     def __str__(self):
-        return f"{self.namn}.\n Min catchphrase är {self.catchphrase}. \n {self.busighet} busig på skalan 0-1 \n {self.ålder} år gammal.\n"
+        return f"{self.namn}.\n Min catchphrase är ({self.catchphrase}). \n ({self.busighet}) busig på skalan 0-1 \n ({self.ålder}) år gammal.\n"
 
     # Setters
     def setNamn(self, nyttNamn):
@@ -161,24 +161,11 @@ def äldst(buss):
     return äldsta_passagerare
 
 
-# Sorterar bussen, antingen efter namn i bokstavsordning eller efter ålder.
+# Sorterar bussen, antingen efter busighet eller efter ålder.
 def sort_buss(buss_lista):
-    print("\n--- Sortera bussen ---")
-    val = input("Vill du sortera efter [n]amn eller [å]lder? (n/å) → ").lower()
+    return sorted(buss_lista, key=lambda buss: buss["ålder"])
+    return sorted(buss_lista, key=lambda buss: buss.ålder)     
     
-    if val in ["n", "namn"]:
-        buss_lista.sort(key=lambda p: p.getNamn().lower())
-        print("Bussen är nu sorterad efter namn!")
-    else:
-        buss_lista.sort(key=lambda p: p.getÅlder())
-        print("Bussen är nu sorterad efter ålder!")
-
-    a = len(buss_lista)
-
-    for i in range(a):
-        print(f"Bussens passagerare är:{buss_lista[i-1]} \n")
-        i +=1
-    return buss_lista
     
                 
 
@@ -250,7 +237,8 @@ def main():
             print(Ålderäld)
             pass
         elif menyVal == "7":
-            buss = sort_buss(buss)
+            Åldersort = sort_buss(buss)
+            print(Åldersort)
             pass
         elif menyVal == "8":
             pass 
