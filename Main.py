@@ -193,8 +193,18 @@ def hittaPassagerare(åldersSpann):
 # petar på en passagerare. Skriver ut en text som beskriver passagerarens
 # reaktion när denne blir petad på. För lite svårare uppgift kan reaktionerna
 # variera från person till person, t.ex. beroende på ålder.
-def peta(passagerare):
-    return
+def peta(buss):
+    passagerarenr = Hanteradinput(int,f"Vilken passagerare vill du peta på? 1-{len(buss)}--> ")
+    if passagerarenr < 0 or len(buss)< passagerarenr:
+        print("Gör om, gör rätt..") 
+        return
+    else:
+        person = buss[passagerarenr-1]
+        print(person.catchphrase) 
+
+    
+
+        return
 
 # ------------------------------ Huvudprogram --------------------------------- #
 def main():
@@ -255,7 +265,7 @@ def main():
         elif menyVal == "8":
             pass 
         elif menyVal == "9":
-            catchphrase = peta
+            peta(buss)
             pass   
 
 

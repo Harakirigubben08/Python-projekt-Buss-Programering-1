@@ -13,3 +13,4 @@ Catchphrase =["Rör mig igen och jag biter av dig fingret och använder det som 
     "梨是健康的."
 ]
 Busighet = [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
+
