@@ -174,7 +174,20 @@ def sort_buss(buss_lista):
 
 
 # Skriver ut en lista på alla passagerare inom ett visst åldersspann.
-def hittaPassagerare(åldersSpann):
+def hitta_passagerare(alla_passagerare, spann):
+    ålderspannövre = Hanteradinput(int,"Vad är maxåldern på passageraren??--> ")
+    ålderspannlägre = Hanteradinput(int,"Vad är den lägsta ålder?--> ")
+    if ålderspannövre > ålderspannlägre:
+        ålder_min = int(input("Skriv in det första talet:"))
+        ålder_max = int(input("Skriv in det andra talet"))
+        if ålder_min or ålder_max >=0:
+            print("Ingen är yngre än noll år")
+        elif ålder_max or ålder_min <=122:
+            print("Ingen har någonsin blivit äldre än 122år")
+    else:
+        print("Du har fått fel på låg och hög...")
+        pass
+    
     return
 
 # petar på en passagerare. Skriver ut en text som beskriver passagerarens
@@ -251,6 +264,7 @@ def main():
             print(Åldersort)
             pass
         elif menyVal == "8":
+            hitta_passagerare(buss)
             pass 
         elif menyVal == "9":
             peta(buss)
