@@ -2,7 +2,7 @@
 ------------------------------- Information --------------------------------
 
 Titel: Bussen
-Författare:Emil och vilgot Su.
+Författare:Emil och Vilgot Su.
 Datum: 2025/02/29
 Det här är ett program för hantering av passagerare på en buss. Programmet
 lagrar passagerare i en lista(Det kan ju en apa förstå).
@@ -77,7 +77,8 @@ def Slumpplockaupp(buss):
     catchphrase = rand.choice(Catchphrase)
     busighet = rand.choice(Busighet)
     ålder = rand.randint(0, 155)
-    ny_passagerare=Person(namn,catchphrase,busighet,ålder) 
+    ny_passagerare=Person(namn,catchphrase,busighet,ålder)
+    print(ny_passagerare)
     buss.append(ny_passagerare)
     
     return buss     
@@ -110,6 +111,7 @@ def åldersortera(buss):
     åldrar=[]
 
     for i in range:
+        
     
         print("hejsan")
         a += 1
@@ -129,7 +131,7 @@ def plockaUpp(buss):
         return(buss)
     else:
         print("SYNTAX ERROR, Gör om gör rätt")
-        pass  
+        return(buss)
         
     
 
@@ -143,7 +145,7 @@ def gåAv(buss):
 def skrivUt(buss):
     a = len(buss)
     for i in range(a):
-        print(f"Bussens passagerare är:{buss[i-1]} \n")
+        print(f"Bussens passagerare nr:{i+1} är, {buss[i-1]} \n")
         i +=1
 
     return
