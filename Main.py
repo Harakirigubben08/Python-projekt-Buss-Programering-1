@@ -111,7 +111,6 @@ def åldersortera(buss):
     åldrar=[]
 
     for i in range:
-        
     
         print("hejsan")
         a += 1
@@ -190,7 +189,7 @@ def sort_buss(buss):
         return(buss)
     else:
         print("Hur svårt kan det vara??")
-        pass
+        return buss
 
 
     
@@ -202,21 +201,22 @@ def sort_buss(buss):
 
 
 # Skriver ut en lista på alla passagerare inom ett visst åldersspann.
-def hitta_passagerare(alla_passagerare, spann):
+def hitta_passagerare(buss):
     ålderspannövre = Hanteradinput(int,"Vad är maxåldern på passageraren??--> ")
     ålderspannlägre = Hanteradinput(int,"Vad är den lägsta ålder?--> ")
-    if ålderspannövre > ålderspannlägre:
-        ålder_min = int(input("Skriv in det första talet:"))
-        ålder_max = int(input("Skriv in det andra talet"))
-        if ålder_min or ålder_max >=0:
-            print("Ingen är yngre än noll år")
-        elif ålder_max or ålder_min <=122:
-            print("Ingen har någonsin blivit äldre än 122år")
+    if ålderspannövre > ålderspannlägre and ålderspannövre < 122 and ålderspannlägre > 0:
+        for i in range(len(buss)):  
+           if buss[i]< ålderspannövre and buss[i] > ålderspannlägre:
+               print (buss[i])
+           else:
+               i+=1 
+               pass
+        return buss
     else:
-        print("Du har fått fel på låg och hög...")
-        pass
+        print("Lär dig matte och mänsklig biologi!!!🤓☝️😋🙉")
+        return buss
     
-    return
+    return buss
 
 # petar på en passagerare. Skriver ut en text som beskriver passagerarens
 # reaktion när denne blir petad på. För lite svårare uppgift kan reaktionerna
@@ -238,7 +238,7 @@ def peta(buss):
 def main():
     p1 = Person("Marre Maräng", "Hurru du din marängskalle", 0.8, 13)
     p2 = Person("Virre", "Snurr snurr", 0.2, 19)
-    p3 = Person("Lellegamer22", "Vart är donken?", 0.7, 9)
+    p3 = Person("Lellegamer22", "Ima tuck you in real good!", 0.7, 9)
     p4 = Person("Lennart Bladh", "Hi again.", 0.9, 62 )
     
     
