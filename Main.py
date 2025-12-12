@@ -58,18 +58,24 @@ class Person():
 
 #Funktionen som låter operatören lägga in helt egna passagerare
 def Egenplockaupp(buss):
-        namn = Hanteradinput(str,"Vad heter karaktären?-->")
-        catchphrase = Hanteradinput(str,"Vad är karaktärens Catchphrase?-->")
-        busighet = float(input("På en skala 0-1 hur busig är karaktären? -->"))
-        if busighet < 0 or busighet > 1:
-            raise ValueError 
-        else:
-            ålder= Hanteradinput(float,"Hur gammal är karaktären?-->")
+    while True:
+        namn = Hanteradinput(str, "Vad heter karaktären? --> ")
+        catchphrase = Hanteradinput(str, "Vad är karaktärens catchphrase? --> ")
+        while True:
+            try:
+                busighet = Hanteradinput(float, "Vilken busighet ska karaktären ha 0-1? --> ")
+                if not 0 <= busighet <= 1:
+                    raise ValueError
+                break  
+            except ValueError:
+                print("Mupp...")
 
-        ny_passagerare=Person(namn,catchphrase,busighet,ålder) 
+        ålder = Hanteradinput(float, "Hur gammal är karaktären? --> ")
+
+        ny_passagerare = Person(namn, catchphrase, busighet, ålder)
         buss.append(ny_passagerare)
-
-        return buss 
+        print(f"{namn} Plankade på bussen")
+        return buss
 
 #Funktionen som slumpar fram en ny passagerare ur ett antal listor
 def Slumpplockaupp(buss):
@@ -143,8 +149,7 @@ def gåAv(buss):
 
 # Listar alla passagerare på bussen.
 def skrivUt(buss):
-    a = len(buss)
-    for i in range(a):
+    for i in range(len(buss)):
         print(f"Bussens passagerare nr:{i+1} är, {buss[i-1]} \n")
         i +=1
 
@@ -175,7 +180,7 @@ def äldst(buss):
     return äldsta_passagerare
 
 
-# Sorterar bussen, antingen efter busighet eller efter ålder.
+# Sorterar bussen, antingen efter busighet eller efter ålder.              !!!Funkar icke men Vilgot arbetar på det!!!
 def sort_buss(buss):
     hursortera = Hanteradinput(str,("Vill du sortera listan med Namn eller ålder (n/å)? --> "))
     
@@ -205,11 +210,13 @@ def hitta_passagerare(buss):
     ålderspannövre = Hanteradinput(int,"Vad är maxåldern på passageraren??--> ")
     ålderspannlägre = Hanteradinput(int,"Vad är den lägsta ålder?--> ")
     if ålderspannövre > ålderspannlägre and ålderspannövre < 122 and ålderspannlägre > 0:
-        for i in range(len(buss)):  
-           if buss[i]< ålderspannövre and buss[i] > ålderspannlägre:
-               print (buss[i])
+        for i in buss:  
+           a = i
+           i = int(i.getÅlder())
+           if i < ålderspannövre and i > ålderspannlägre:
+               print (a)
            else:
-               i+=1 
+               i += 1 
                pass
         return buss
     else:
@@ -218,9 +225,7 @@ def hitta_passagerare(buss):
     
     return buss
 
-# petar på en passagerare. Skriver ut en text som beskriver passagerarens
-# reaktion när denne blir petad på. För lite svårare uppgift kan reaktionerna
-# variera från person till person, t.ex. beroende på ålder.
+# petar på en passagerare. Skriver ut en text som beskriver passagerarens 
 def peta(buss):
     passagerarenr = Hanteradinput(int,f"Vilken passagerare vill du peta på? 1-{len(buss)}--> ")
     if passagerarenr < 0 or len(buss)< passagerarenr:
