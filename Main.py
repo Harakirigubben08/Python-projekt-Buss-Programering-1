@@ -137,8 +137,9 @@ def plockaUpp(buss):
 
 # Avlägsnar en person från bussen.
 def gåAv(buss):
-    attgåav = Hanteradinput(int,"Vem ska gå av?-->")
-    del(buss[attgåav-1]) 
+    print(skrivUt(buss))
+    attgåav = Hanteradinput(int,"Se listan ovan, Vem ska gå av? välj nummer --> ")
+    del(buss[attgåav]) 
     return buss
 
 # Listar alla passagerare på bussen.
