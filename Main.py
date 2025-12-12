@@ -108,8 +108,9 @@ def Hanteradinput(variabeltyp, fråga):
 # Sorterar bussen efter ålder
 def åldersortera(buss):
     åldrar=[]
-    listlängd = len(buss)
-    for i in range listlängd: 
+
+    for i in range:
+    
         print("hejsan")
         a += 1
 
