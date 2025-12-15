@@ -1,3 +1,5 @@
+    
+
 Förnamn = ["Emil ","Vilgot ","Frej ","Martin ","Lelle ","Peter ","Johannes ","Nikodemus ","Anna ","Ellie ","Maria ","Kenneth ","Pher ","Erland ","Leopold ","Mimmie ","Ann-Catrin "]
 Efternamn = ["Åhman","Åman","Sundin","Hedenhös","Svedenmärkt","Thésen","Peterberg","Ahmmoudsson","Trump","Gatenmalm","Jansson","Bergling",""]
 Catchphrase =["Rör mig igen och jag biter av dig fingret och använder det som tandpetare!",

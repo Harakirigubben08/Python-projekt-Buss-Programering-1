@@ -7,4 +7,4 @@ Den här koden är licensierad under **CC BY-NC 4.0** – du får använda, modi
 
 > **Kommersiell användning förbjuden** utan skriftligt tillstånd.
 
-Ett buss programerings program som är gjort i python. Skapat av Emil Åhman och Vilgot Sundin som går i 4:an på den dö-tråkiga Teknikvetenskaps linjen på Åva Gymnasium
+Ett buss programerings program som är gjort i python. Skapat av Vilgot Sundin och ibland Emil Åhamn som går i 4:an på den dö-tråkiga Teknikvetenskaps linjen på Åva Gymnasium

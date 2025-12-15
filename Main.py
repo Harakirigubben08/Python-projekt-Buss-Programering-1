@@ -10,7 +10,7 @@ lagrar passagerare i en lista(Det kan ju en apa förstå).
 # ------------------------- Biblioteksimportering ----------------------------- #
 import random as rand
 import math as meth
-from Randompassagerarlistor import*
+from Listor_för_passagerare_och_dylikt import*
 
 #-------------------------------Buss utskrivt-----------------------------------#
 
@@ -227,25 +227,25 @@ def hitta_passagerare(buss):
 
 # petar på en passagerare. Skriver ut en text som beskriver passagerarens 
 def peta(buss):
+    skrivUt(buss)
     passagerarenr = Hanteradinput(int,f"Vilken passagerare vill du peta på? 1-{len(buss)}--> ")
     if passagerarenr < 0 or len(buss)< passagerarenr:
         print("Gör om, gör rätt..") 
         return
     else:
-        person = buss[passagerarenr-1]
-        print(person.catchphrase) 
-
-    
+        person = buss[passagerarenr-2]
+        print(person.catchphrase)
 
         return
 
 # ------------------------------ Huvudprogram --------------------------------- #
 def main():
+
     p1 = Person("Marre Maräng", "Hurru du din marängskalle", 0.8, 13)
     p2 = Person("Virre", "Snurr snurr", 0.2, 19)
     p3 = Person("Lellegamer22", "Ima tuck you in real good!", 0.7, 9)
     p4 = Person("Lennart Bladh", "Hi again.", 0.9, 62 )
-    
+
     
     buss = [p1,p2,p3,p4]
     menyVal = ""
