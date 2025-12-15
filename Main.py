@@ -144,7 +144,7 @@ def plockaUpp(buss):
 def gåAv(buss):
     print(skrivUt(buss))
     attgåav = Hanteradinput(int,"Se listan ovan, Vem ska gå av? välj nummer --> ")
-    del(buss[attgåav]) 
+    del(buss[attgåav-2]) 
     return buss
 
 # Listar alla passagerare på bussen.
@@ -205,7 +205,7 @@ def sort_buss(buss):
     
 
 
-# Skriver ut en lista på alla passagerare inom ett visst åldersspann.
+# Skriver ut en lista på alla passagerare inom ett visst åldersspann.     
 def hitta_passagerare(buss):
     ålderspannövre = Hanteradinput(int,"Vad är maxåldern på passageraren??--> ")
     ålderspannlägre = Hanteradinput(int,"Vad är den lägsta ålder?--> ")
