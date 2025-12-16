@@ -116,7 +116,7 @@ def Hanteradinput(variabeltyp, fråga):
 def åldersortera(buss):
     åldrar=[]
 
-    for i in range:
+    for i in range(len(buss)):
     
         print("hejsan")
         a += 1
@@ -182,13 +182,14 @@ def äldst(buss):
 
 # Sorterar bussen, antingen efter busighet eller efter ålder.              !!!Funkar icke men Vilgot arbetar på det!!!
 def sort_buss(buss):
-    hursortera = Hanteradinput(str,("Vill du sortera listan med Namn eller ålder (n/å)? --> "))
-    
-    if hursortera == "n":
+    hursortera = Hanteradinput(str,("Vill du sortera listan med namn eller ålder (n/å)? --> "))
+    hursortera.lower
+    print(hursortera)
+    if hursortera == "n" or hursortera == "namn":
 
-        pass
+        return buss
 
-    elif  hursortera == "å":   
+    elif  hursortera == "å" or hursortera == "åldst":   
         buss =åldersortera(buss)
 
         return(buss)
