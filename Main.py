@@ -231,7 +231,13 @@ def hitta_passagerare(buss):
 
 # petar på en passagerare. Skriver ut en text som beskriver passagerarens 
 def peta(buss):
-    skrivUt(buss)
+
+    for i in range(len(buss)):
+        person = i.getNamn()
+        print(f"nr {i+1} är {person}")
+        i += 1
+
+
     passagerarenr = Hanteradinput(int,f"Vilken passagerare vill du peta på? 1-{len(buss)}--> ")
     if passagerarenr < 0 or len(buss)< passagerarenr:
         print("Gör om, gör rätt..") 
