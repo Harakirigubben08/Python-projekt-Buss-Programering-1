@@ -137,10 +137,14 @@ def plockaUpp(buss):
 
 # Avlägsnar en person från bussen.
 def gåAv(buss):
-    print(skrivUt(buss))
-    attgåav = Hanteradinput(int,"Se listan ovan, Vem ska gå av? välj nummer --> ")
-    del(buss[attgåav-2]) 
-    return buss
+    if len(buss) > 0:
+        print(skrivUt(buss))
+        attgåav = Hanteradinput(int,"Se listan ovan, Vem ska gå av? välj nummer --> ")
+        del(buss[attgåav-2]) 
+        return buss
+    else:
+        print("Pappskalle bussen är tom..")
+        return buss
 
 # Listar alla passagerare på bussen.
 def skrivUt(buss):
@@ -178,15 +182,14 @@ def äldst(buss):
 # Sorterar bussen, antingen efter busighet eller efter ålder.              !!!Funkar icke men Vilgot arbetar på det!!!
 def sort_buss(buss):
     hursortera = Hanteradinput(str,("Vill du sortera listan med namn eller ålder (n/å)? --> "))
-    hursortera.lower
+    hursortera.lower()
     print(hursortera)
     if hursortera == "n" or hursortera == "namn":
-
         return buss
 
-    elif  hursortera == "å" or hursortera == "åldst":   
-        buss =åldersortera(buss)
-
+    elif  hursortera == "å" or hursortera == "ålder":   
+        åldersortera(buss)
+        print(buss)
         return(buss)
     else:
         print("Hur svårt kan det vara??")
