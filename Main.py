@@ -114,8 +114,16 @@ def Hanteradinput(variabeltyp, fråga):
 
 # Sorterar bussen efter ålder
 def åldersortera(buss):
-    sorterad = sorted(buss, key=lambda person: person.ålder)
-    return sorterad
+    sorteradbuss = []
+    for i in range(len(buss)):
+        tempäldst = äldst(buss)
+        sorteradbuss.append(tempäldst)
+        print(sorteradbuss[i-1])
+        buss.remove(tempäldst)
+        buss = sorteradbuss + buss
+        return buss
+       
+       
 
 
 # ------------------------- Funktionsdefinitioner ---------------------------- #    
@@ -292,8 +300,8 @@ def main():
             print(Ålderäld)
             pass
         elif menyVal == "7":
-            Åldersort = sort_buss(buss)
-            print(Åldersort)
+            sort_buss(buss)
+            print(buss)
             pass
         elif menyVal == "8":
             hitta_passagerare(buss)
