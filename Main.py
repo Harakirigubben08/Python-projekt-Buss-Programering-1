@@ -108,7 +108,7 @@ def Hanteradinput(variabeltyp, fråga):
                 rätt = bool(svar)
                 return rätt
             else:
-                print("läs frågan och svara rätt din mupp!!!")
+                print("Läs frågan och svara rätt din mupp!!!")
         except ValueError:
             print("Gör rätt din mupp!!!")
 
