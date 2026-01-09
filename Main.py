@@ -114,14 +114,8 @@ def Hanteradinput(variabeltyp, fråga):
 
 # Sorterar bussen efter ålder
 def åldersortera(buss):
-    sorteradbuss = []
-    for i in range(len(buss)):
-        tempäldst = äldst(buss)
-        sorteradbuss.append(tempäldst)
-        print(sorteradbuss[i-1])
-        buss.remove(tempäldst)
-        buss = sorteradbuss + buss
-        return buss
+    sorteradbuss = sorted(buss, key=lambda person: int(person.getÅlder()), reverse=True)
+    return sorteradbuss
        
        
 
@@ -157,7 +151,7 @@ def gåAv(buss):
 # Listar alla passagerare på bussen.
 def skrivUt(buss):
     for i in range(len(buss)):
-        print(f"Bussens passagerare nr:{i+1} är, {buss[i-1]} \n")
+        print(f"Bussens passagerare nr:{i+1} är, {buss[i]} \n")
         i +=1
 
     return
@@ -187,21 +181,10 @@ def äldst(buss):
     return äldsta_passagerare
 
 
-# Sorterar bussen, antingen efter busighet eller efter ålder.              !!!Funkar icke men Vilgot arbetar på det!!!
+# Sorterar bussen efter ålder.
 def sort_buss(buss):
-    hursortera = Hanteradinput(str,("Vill du sortera listan med namn eller ålder (n/å)? --> "))
-    hursortera.lower()
-    print(hursortera)
-    if hursortera == "n" or hursortera == "namn":
-        return buss
-
-    elif  hursortera == "å" or hursortera == "ålder":   
-        åldersortera(buss)
-        print(buss)
-        return(buss)
-    else:
-        print("Hur svårt kan det vara??")
-        return buss
+    sorteradbuss = åldersortera(buss)
+    return sorteradbuss
 
 
     
@@ -271,7 +254,7 @@ def main():
                     Välkommen till buss-simulatorn. Välj ett av alternativen nedan:
             1. Plocka upp ny passagerare                  2. Låt passagerare gå av
             3. Skriv ut alla passagerare                  4. Beräkna sammanlagd ålder
-            5. Beräkna medelåldern                        6. Hitta äldst person
+            5. Beräkna medelåldern                        6. Hitta äldsta person
             7. Sortera bussen                             8. Hitta personer inom ett specifikt åldersspann
             9. Peta på passagerare                        q. Avsluta
         ---------------------------------------------------------------------------------------
@@ -306,8 +289,9 @@ def main():
             print(Ålderäld)
             pass
         elif menyVal == "7":
-            sort_buss(buss)
-            print(buss)
+            buss = sort_buss(buss)
+            print("Sorterad buss:")
+            skrivUt(buss)
             pass
         elif menyVal == "8":
             hitta_passagerare(buss)
