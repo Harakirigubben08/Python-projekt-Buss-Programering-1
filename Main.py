@@ -127,14 +127,9 @@ def Hanteradinput(variabeltyp, fråga):
 
 # Sorterar bussen efter ålder
 def åldersortera(buss):
-    sorteradbuss = []
-    for i in range(len(buss)):
-        tempäldst = äldst(buss)
-        sorteradbuss.append(tempäldst)
-        print(sorteradbuss[i-1])
-        buss.remove(tempäldst)
-        buss = sorteradbuss + buss
-        return buss
+
+    
+    return buss
        
        
 
@@ -228,7 +223,8 @@ def sort_buss(buss):
 # Skriver ut en lista på alla passagerare inom ett visst åldersspann.     
 def hitta_passagerare(buss):
     ålderspannövre = Hanteradinput(int,"Vad är maxåldern på passageraren??--> ")
-    ålderspannlägre = Hanteradinput(int,"Vad är den lägsta ålder?--> ")
+    ålderspannlägre = Hanteradinput(int,f"Vad är den lägsta ålder?-->")
+    print(" ")
     if ålderspannövre > ålderspannlägre and ålderspannövre < 122 and ålderspannlägre > 0:
         for i in buss:  
            a = i
