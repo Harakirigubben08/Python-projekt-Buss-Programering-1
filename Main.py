@@ -54,6 +54,19 @@ class Person():
     def getCatchphrase(self):
         return self.catchphrase
 
+# Lista för mycket busiga passagerare
+djurtransportern = []
+
+def placera_passagerare(buss, passagerare):
+    """Placerar en passagerare i `buss` eller i `djurtransportern` om
+    passagerarens busighet är över 0.7."""
+    if passagerare.busighet > 0.7:
+        djurtransportern.append(passagerare)
+        print(f"{passagerare.namn} är för busig ({passagerare.busighet}) och flyttas till djurtransportern.")
+    else:
+        buss.append(passagerare)
+    return
+
 #-------------------------Hjälpfunktionsdefiitioner---------------------------#
 
 #Funktionen som låter operatören lägga in helt egna passagerare
@@ -73,7 +86,7 @@ def Egenplockaupp(buss):
         ålder = Hanteradinput(float, "Hur gammal är karaktären? --> ")
 
         ny_passagerare = Person(namn, catchphrase, busighet, ålder)
-        buss.append(ny_passagerare)
+        placera_passagerare(buss, ny_passagerare)
         print(f"{namn} Plankade på bussen")
         return buss
 
@@ -85,7 +98,7 @@ def Slumpplockaupp(buss):
     ålder = rand.randint(0, 155)
     ny_passagerare=Person(namn,catchphrase,busighet,ålder)
     print(ny_passagerare)
-    buss.append(ny_passagerare)
+    placera_passagerare(buss, ny_passagerare)
     
     return buss     
 
@@ -236,7 +249,7 @@ def hitta_passagerare(buss):
 def peta(buss):
 
     for i in range(len(buss)):
-        person = i.getNamn()
+        person = buss[i].getNamn()
         print(f"nr {i+1} är {person}")
         i += 1
 
@@ -246,7 +259,7 @@ def peta(buss):
         print("Gör om, gör rätt..") 
         return
     else:
-        person = buss[passagerarenr-2]
+        person = buss[passagerarenr-1]
         print(person.catchphrase)
 
         return
@@ -260,7 +273,9 @@ def main():
     p4 = Person("Lennart Bladh", "Hi again.", 0.9, 62 )
 
     
-    buss = [p1,p2,p3,p4]
+    buss = []
+    for p in (p1, p2, p3, p4):
+        placera_passagerare(buss, p)
     menyVal = ""
 
     while menyVal != "q":
