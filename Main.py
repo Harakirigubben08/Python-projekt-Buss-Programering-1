@@ -54,6 +54,19 @@ class Person():
     def getCatchphrase(self):
         return self.catchphrase
 
+# Lista för mycket busiga passagerare
+djurtransportern = []
+
+def placera_passagerare(buss, passagerare):
+    """Placerar en passagerare i bussen eller i djurtransportern om
+    passagerarens busighet är över 0.7."""
+    if passagerare.busighet > 0.7:
+        djurtransportern.append(passagerare)
+        print(f"{passagerare.namn} är för busig ({passagerare.busighet}) och hamnar i djurtransportern.")
+    else:
+        buss.append(passagerare)
+    return
+
 #-------------------------Hjälpfunktionsdefiitioner---------------------------#
 
 #Funktionen som låter operatören lägga in helt egna passagerare
@@ -73,7 +86,7 @@ def Egenplockaupp(buss):
         ålder = Hanteradinput(float, "Hur gammal är karaktären? --> ")
 
         ny_passagerare = Person(namn, catchphrase, busighet, ålder)
-        buss.append(ny_passagerare)
+        placera_passagerare(buss, ny_passagerare)
         print(f"{namn} Plankade på bussen")
         return buss
 
@@ -85,7 +98,7 @@ def Slumpplockaupp(buss):
     ålder = rand.randint(0, 155)
     ny_passagerare=Person(namn,catchphrase,busighet,ålder)
     print(ny_passagerare)
-    buss.append(ny_passagerare)
+    placera_passagerare(buss, ny_passagerare)
     
     return buss     
 
@@ -114,14 +127,9 @@ def Hanteradinput(variabeltyp, fråga):
 
 # Sorterar bussen efter ålder
 def åldersortera(buss):
-    sorteradbuss = []
-    for i in range(len(buss)):
-        tempäldst = äldst(buss)
-        sorteradbuss.append(tempäldst)
-        print(sorteradbuss[i-1])
-        buss.remove(tempäldst)
-        buss = sorteradbuss + buss
-        return buss
+
+    
+    return buss
        
        
 
@@ -156,9 +164,18 @@ def gåAv(buss):
 
 # Listar alla passagerare på bussen.
 def skrivUt(buss):
-    for i in range(len(buss)):
-        print(f"Bussens passagerare nr:{i+1} är, {buss[i-1]} \n")
-        i +=1
+    # Skriv ut passagerare i bussen
+    if len(buss) > 0:
+        for idx, passagerare in enumerate(buss, start=1):
+            print(f"Bussens passagerare nr:{idx} är, {passagerare} \n")
+    else:
+        print("Bussen är tom.")
+
+    # Skriv ut passagerare som hamnat i djurtransportern
+    if len(djurtransportern) > 0:
+        print("Passagerare i djurtransportern:")
+        for idx, passagerare in enumerate(djurtransportern, start=1):
+            print(f"Djurtransport nr:{idx} är, {passagerare} \n")
 
     return
 
@@ -215,7 +232,8 @@ def sort_buss(buss):
 # Skriver ut en lista på alla passagerare inom ett visst åldersspann.     
 def hitta_passagerare(buss):
     ålderspannövre = Hanteradinput(int,"Vad är maxåldern på passageraren??--> ")
-    ålderspannlägre = Hanteradinput(int,"Vad är den lägsta ålder?--> ")
+    ålderspannlägre = Hanteradinput(int,f"Vad är den lägsta ålder?-->")
+    print(" ")
     if ålderspannövre > ålderspannlägre and ålderspannövre < 122 and ålderspannlägre > 0:
         for i in buss:  
            a = i
@@ -236,7 +254,7 @@ def hitta_passagerare(buss):
 def peta(buss):
 
     for i in range(len(buss)):
-        person = i.getNamn()
+        person = buss[i].getNamn()
         print(f"nr {i+1} är {person}")
         i += 1
 
@@ -246,7 +264,7 @@ def peta(buss):
         print("Gör om, gör rätt..") 
         return
     else:
-        person = buss[passagerarenr-2]
+        person = buss[passagerarenr-1]
         print(person.catchphrase)
 
         return
@@ -260,7 +278,9 @@ def main():
     p4 = Person("Lennart Bladh", "Hi again.", 0.9, 62 )
 
     
-    buss = [p1,p2,p3,p4]
+    buss = []
+    for p in (p1, p2, p3, p4):
+        placera_passagerare(buss, p)
     menyVal = ""
 
     while menyVal != "q":
