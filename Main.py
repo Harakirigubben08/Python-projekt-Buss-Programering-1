@@ -57,15 +57,7 @@ class Person():
 # Lista för mycket busiga passagerare
 djurtransportern = []
 
-def placera_passagerare(buss, passagerare):
-    """Placerar en passagerare i bussen eller i djurtransportern om
-    passagerarens busighet är över 0.7."""
-    if passagerare.busighet > 0.7:
-        djurtransportern.append(passagerare)
-        print(f"{passagerare.namn} är för busig ({passagerare.busighet}) och hamnar i djurtransportern.")
-    else:
-        buss.append(passagerare)
-    return
+
 
 #-------------------------Hjälpfunktionsdefiitioner---------------------------#
 
@@ -157,19 +149,26 @@ def gåAv(buss):
 
 # Listar alla passagerare på bussen.
 def skrivUt(buss):
-    # Skriv ut passagerare i bussen
+
+
+    # Skriv ut passagerare i bussen -----   Vilgot Ska jobba på denne
     if len(buss) > 0:
-        for idx, passagerare in enumerate(buss, start=1):
+            # delar upp på djurtransport och vanlig buss
+        vanligbuss = []
+        djurtransport = []
+        if passagerare.busighet > 0.7:
+            djurtransport.append(passagerare)
+        else:
+            vanligbuss.append(passagerare)
+
+        for idx, passagerare in enumerate(vanligbuss, start=1):
             print(f"Bussens passagerare nr:{idx} är, {passagerare} \n")
+        print ("I djurtransporten sitter")
+        for idx, passagerare in enumerate(djurtransport, start=1):
+            print(f"djurtransportens passagerare nr:{idx} är, {passagerare} \n")
+
     else:
         print("Bussen är tom.")
-
-    # Skriv ut passagerare som hamnat i djurtransportern
-    if len(djurtransportern) > 0:
-        print("Passagerare i djurtransportern:")
-        for idx, passagerare in enumerate(djurtransportern, start=1):
-            print(f"Djurtransport nr:{idx} är, {passagerare} \n") 
-
     return
 
 # Skriver ut den sammanlagda åldern på passagerarna.
@@ -197,17 +196,13 @@ def äldst(buss):
     return äldsta_passagerare
 
 
-# Sorterar bussen, antingen efter busighet eller efter ålder.              !!!Funkar icke men Vilgot arbetar på det!!!
+# Sorterar bussen, antingen efter busighet eller efter ålder.             
 def sort_buss(buss):
-    def åldersortera(buss):
-        sorteradbuss = []
-        for i in range(len(buss)):
-            tempäldst = äldst(buss)
-            sorteradbuss.append(tempäldst)
-            print(sorteradbuss[i-1])
-            buss.remove(tempäldst)
-            buss = sorteradbuss + buss    
-        return buss
+    sorteradbuss = sorted(buss, key=lambda person: int(person.ålder), reverse=True)
+    buss = sorteradbuss
+
+    return buss
+
 
 
     
@@ -267,9 +262,7 @@ def main():
     p4 = Person("Lennart Bladh", "Hi again.", 0.9, 62 )
 
     
-    buss = []
-    for p in (p1, p2, p3, p4):
-        placera_passagerare(buss, p)
+    buss = [p1,p2,p3,p4]
     menyVal = ""
 
     while menyVal != "q":
@@ -315,9 +308,9 @@ def main():
             print(Ålderäld)
             pass
         elif menyVal == "7":
-            sort_buss(buss)
-            print(buss)
-            pass
+
+            buss = sort_buss(buss)
+
         elif menyVal == "8":
             hitta_passagerare(buss)
             pass 
