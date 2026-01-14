@@ -58,11 +58,11 @@ class Person():
 djurtransportern = []
 
 def placera_passagerare(buss, passagerare):
-    """Placerar en passagerare i `buss` eller i `djurtransportern` om
+    """Placerar en passagerare i bussen eller i djurtransportern om
     passagerarens busighet är över 0.7."""
     if passagerare.busighet > 0.7:
         djurtransportern.append(passagerare)
-        print(f"{passagerare.namn} är för busig ({passagerare.busighet}) och flyttas till djurtransportern.")
+        print(f"{passagerare.namn} är för busig ({passagerare.busighet}) och hamnar i djurtransportern.")
     else:
         buss.append(passagerare)
     return
@@ -164,9 +164,18 @@ def gåAv(buss):
 
 # Listar alla passagerare på bussen.
 def skrivUt(buss):
-    for i in range(len(buss)):
-        print(f"Bussens passagerare nr:{i+1} är, {buss[i-1]} \n")
-        i +=1
+    # Skriv ut passagerare i bussen
+    if len(buss) > 0:
+        for idx, passagerare in enumerate(buss, start=1):
+            print(f"Bussens passagerare nr:{idx} är, {passagerare} \n")
+    else:
+        print("Bussen är tom.")
+
+    # Skriv ut passagerare som hamnat i djurtransportern
+    if len(djurtransportern) > 0:
+        print("Passagerare i djurtransportern:")
+        for idx, passagerare in enumerate(djurtransportern, start=1):
+            print(f"Djurtransport nr:{idx} är, {passagerare} \n")
 
     return
 
