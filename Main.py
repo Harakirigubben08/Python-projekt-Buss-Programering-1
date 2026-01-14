@@ -2,7 +2,7 @@
 ------------------------------- Information --------------------------------
 
 Titel: Bussen
-Författare:Emil och Vilgot Su.
+Författare:Emil och Vilgot Oscar Sundin.
 Datum: 2025/02/29
 Det här är ett program för hantering av passagerare på en buss. Programmet
 lagrar passagerare i en lista(Det kan ju en apa förstå).
@@ -175,7 +175,7 @@ def skrivUt(buss):
     if len(djurtransportern) > 0:
         print("Passagerare i djurtransportern:")
         for idx, passagerare in enumerate(djurtransportern, start=1):
-            print(f"Djurtransport nr:{idx} är, {passagerare} \n")
+            print(f"Djurtransport nr:{idx} är, {passagerare} \n") 
 
     return
 
