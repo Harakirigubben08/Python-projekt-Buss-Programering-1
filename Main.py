@@ -146,7 +146,7 @@ def gåAv(buss):
         return buss
 
 
-# Listar alla passagerare på bussen sorterade efter fallande ålder(Bussen och djurtransporten sorteras separat)
+# Listar alla passagerare på bussen sorterade efter fallande ålder(Bussen och djurtransporten separas och skrivs ut individuellt)
 def skrivUt(buss):
 
     if len(buss) > 0:
@@ -214,6 +214,7 @@ def äldst(buss):
 def sort_buss(buss):
     sorteradbuss = sorted(buss, key=lambda person: int(person.ålder), reverse=True)
     buss = sorteradbuss
+    skrivUt(buss)
 
     return buss
 
@@ -280,8 +281,7 @@ def main():
             3. Skriv ut alla passagerare                  4. Beräkna sammanlagd ålder
             5. Beräkna medelåldern                        6. Hitta äldst person
             7. Sortera bussen                             8. Hitta personer inom ett specifikt åldersspann
-            9. Peta på passagerare                        10. Gå på rast och äta riskaka
-            q. Avsluta
+            9. Peta på passagerare                        q. Avsluta
         ---------------------------------------------------------------------------------------
         """)
 
