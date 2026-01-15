@@ -280,7 +280,7 @@ def main():
             1. Plocka upp ny passagerare                  2. Låt passagerare gå av
             3. Skriv ut alla passagerare                  4. Beräkna sammanlagd ålder
             5. Beräkna medelåldern                        6. Hitta äldst person
-            7. Sortera bussen                             8. Hitta personer inom ett specifikt åldersspann
+            7. Sortera bussen (Ålder fallande)            8. Hitta personer inom ett specifikt åldersspann
             9. Peta på passagerare                        10. Gå på rast
             q. Avsluta
         ---------------------------------------------------------------------------------------
