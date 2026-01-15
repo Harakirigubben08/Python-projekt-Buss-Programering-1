@@ -213,6 +213,7 @@ def äldst(buss):
 def sort_buss(buss):
     sorteradbuss = sorted(buss, key=lambda person: int(person.ålder), reverse=True)
     buss = sorteradbuss
+    skrivUt(buss)
 
     return buss
 
