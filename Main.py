@@ -137,38 +137,52 @@ def plockaUpp(buss):
 # Avlägsnar en person från bussen.
 def gåAv(buss):
     if len(buss) > 0:
-        print(skrivUt(buss))
+        buss = skrivUt(buss)
         attgåav = Hanteradinput(int,"Se listan ovan, Vem ska gå av? välj nummer --> ")
-        del(buss[attgåav-2]) 
+        buss.pop(attgåav-1) 
         return buss
     else:
         print("Pappskalle bussen är tom..")
         return buss
 
-# Listar alla passagerare på bussen.
+# Listar alla passagerare på bussen sorterade i rätt vagn
 def skrivUt(buss):
 
-
-    # Skriv ut passagerare i bussen -----   Vilgot Ska jobba på denne
     if len(buss) > 0:
             # delar upp på djurtransport och vanlig buss
         vanligbuss = []
         djurtransport = []
+        passnr = 1
 
         for passagerare in buss:
-            if passagerare.getbusighet() > 0.7:
-                
+            if passagerare.getBusighet() >= 0.7:
+               djurtransport.append(passagerare) 
+            
+            else:
+                vanligbuss.append(passagerare)
 
-
-        for idx, passagerare in enumerate(vanligbuss, start=1):
-            print(f"Bussens passagerare nr:{idx} är, {passagerare} \n")
-        print ("I djurtransporten sitter")
-        for idx, passagerare in enumerate(djurtransport, start=1):
-            print(f"djurtransportens passagerare nr:{idx} är, {passagerare} \n")
+        if len(vanligbuss) > 0:
+            print("I vanliga bussen sitter:\n")
+            for passagerare in vanligbuss:
+                print(f"Passagerare nr: {passnr} är {passagerare}")
+                passnr += 1
+        else:
+            print("Vanliga bussen är tomm.\n")
+        
+        if len(djurtransport) > 0:
+            print("I djurtransporten sitter:\n")
+            for passagerare in djurtransport:
+                print(f"Passagerare nr: {passnr} är {passagerare}")
+                passnr += 1
+        else:
+            print("djurtransporten är tomm.\n")
+        vanligbuss.extend(djurtransport)
+        buss = vanligbuss
+        return buss 
 
     else:
         print("Bussen är tom.")
-    return
+    return buss
 
 # Skriver ut den sammanlagda åldern på passagerarna.
 def sammanlagdÅlder(buss):
