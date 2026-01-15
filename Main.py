@@ -155,7 +155,7 @@ def skrivUt(buss):
         passnr = 1
 
         for passagerare in buss:
-            if passagerare.getBusighet() >= 0.7:
+            if passagerare.getBusighet() > 0.7:
                djurtransport.append(passagerare) 
             
             else:
