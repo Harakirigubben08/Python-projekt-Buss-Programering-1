@@ -2,7 +2,7 @@
 ------------------------------- Information --------------------------------
 
 Titel: Bussen
-Författare:Emil och Vilgot Oscar Sundin.
+Författare: Emil Clas Åhman och Vilgot Oscar Sundin.
 Datum: 2025/02/29
 Det här är ett program för hantering av passagerare på en buss. Programmet
 lagrar passagerare i en lista(Det kan ju en apa förstå).
@@ -51,13 +51,11 @@ class Person():
     def getÅlder(self):
         return self.ålder
     
+    def getBusighet(self):
+        return self.busighet
+    
     def getCatchphrase(self):
         return self.catchphrase
-
-# Lista för mycket busiga passagerare
-djurtransportern = []
-
-
 
 #-------------------------Hjälpfunktionsdefiitioner---------------------------#
 
@@ -78,7 +76,7 @@ def Egenplockaupp(buss):
         ålder = Hanteradinput(float, "Hur gammal är karaktären? --> ")
 
         ny_passagerare = Person(namn, catchphrase, busighet, ålder)
-        placera_passagerare(buss, ny_passagerare)
+        buss.append(ny_passagerare) 
         print(f"{namn} Plankade på bussen")
         return buss
 
@@ -89,8 +87,8 @@ def Slumpplockaupp(buss):
     busighet = rand.choice(Busighet)
     ålder = rand.randint(0, 155)
     ny_passagerare=Person(namn,catchphrase,busighet,ålder)
-    print(ny_passagerare)
-    placera_passagerare(buss, ny_passagerare)
+    buss.append(ny_passagerare)
+    print(f"Den nya passageraren är: \n{ny_passagerare}")
     
     return buss     
 
@@ -156,10 +154,11 @@ def skrivUt(buss):
             # delar upp på djurtransport och vanlig buss
         vanligbuss = []
         djurtransport = []
-        if passagerare.busighet > 0.7:
-            djurtransport.append(passagerare)
-        else:
-            vanligbuss.append(passagerare)
+
+        for passagerare in buss:
+            if passagerare.getbusighet() > 0.7:
+                
+
 
         for idx, passagerare in enumerate(vanligbuss, start=1):
             print(f"Bussens passagerare nr:{idx} är, {passagerare} \n")
