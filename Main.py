@@ -280,7 +280,8 @@ def main():
             3. Skriv ut alla passagerare                  4. Beräkna sammanlagd ålder
             5. Beräkna medelåldern                        6. Hitta äldst person
             7. Sortera bussen                             8. Hitta personer inom ett specifikt åldersspann
-            9. Peta på passagerare                        q. Avsluta
+            9. Peta på passagerare                        10. Gå på rast och äta riskaka
+            q. Avsluta
         ---------------------------------------------------------------------------------------
         """)
 
@@ -313,7 +314,6 @@ def main():
             print(Ålderäld)
             pass
         elif menyVal == "7":
-
             buss = sort_buss(buss)
 
         elif menyVal == "8":
@@ -322,6 +322,9 @@ def main():
         elif menyVal == "9":
             peta(buss)
             pass   
+        elif menyVal == "10":
+            print("Hurru du din latmask, inge rast för dig inom de närmsta 5 åren")
+            pass
 
 
 main()
