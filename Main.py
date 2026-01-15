@@ -59,7 +59,7 @@ class Person():
 
 #-------------------------Hjälpfunktionsdefiitioner---------------------------#
 
-#Funktionen som låter operatören lägga in helt egna passagerare
+#Funktionen som låter operatören lägga in helt egna passagerare(Till och med du Johannes)
 def Egenplockaupp(buss):
     while True:
         namn = Hanteradinput(str, "Vad heter karaktären? --> ")
@@ -77,7 +77,7 @@ def Egenplockaupp(buss):
 
         ny_passagerare = Person(namn, catchphrase, busighet, ålder)
         buss.append(ny_passagerare) 
-        print(f"{namn} Plankade på bussen")
+        print(f"{namn} Plankade på bussen eftersom Vilgot Sundin ska ha 3000kr/h för att köra bussen")
         return buss
 
 #Funktionen som slumpar fram en ny passagerare ur ett antal listor
@@ -93,7 +93,7 @@ def Slumpplockaupp(buss):
     return buss     
 
 
-# Plockar in en felhanterad input, kräver vilken variabeltyp samt vad man vill veta
+# Plockar in en felhanterad input, kräver vilken variabeltyp samt vad man vill veta(Jag vill inte veta något)
 def Hanteradinput(variabeltyp, fråga):
     while True:
         try:
@@ -111,15 +111,15 @@ def Hanteradinput(variabeltyp, fråga):
                 rätt = bool(svar)
                 return rätt
             else:
-                print("Läs frågan och svara rätt din mupp!!!")
+                print("Läs frågan och svara rätt din muppiga mupp!!!")
         except ValueError:
-            print("Gör rätt din mupp!!!")
+            print("Gör rätt din muppiga mupp!!!")
 
 
 # ------------------------- Funktionsdefinitioner ---------------------------- #    
 
 
-# Lägger till en ny person i bussen.
+# Lägger till en ny person i bussen.(Egenskapad eller slumpad)
 def plockaUpp(buss):
     Generationsalt = Hanteradinput(int,"1 för att skapa egen karaktär 2 för att slumpa fram en.--> ")
     if Generationsalt == 1:
@@ -129,7 +129,7 @@ def plockaUpp(buss):
         Slumpplockaupp(buss)
         return(buss)
     else:
-        print("SYNTAX ERROR, Gör om gör rätt")
+        print("Nu blev det fel, Gör om gör rätt din muppiga mupp")
         return(buss)
         
     
@@ -145,11 +145,12 @@ def gåAv(buss):
         print("Pappskalle bussen är tom..")
         return buss
 
-# Listar alla passagerare på bussen sorterade i rätt vagn
+
+# Listar alla passagerare på bussen sorterade efter fallande ålder(Bussen och djurtransporten sorteras separat)
 def skrivUt(buss):
 
     if len(buss) > 0:
-            # delar upp på djurtransport och vanlig buss
+            # Delar upp mellan djurtransport och den självaste bussen
         vanligbuss = []
         djurtransport = []
         passnr = 1
@@ -162,7 +163,7 @@ def skrivUt(buss):
                 vanligbuss.append(passagerare)
 
         if len(vanligbuss) > 0:
-            print("I vanliga bussen sitter:\n")
+            print("I bussen sitter:\n")
             for passagerare in vanligbuss:
                 print(f"Passagerare nr: {passnr} är {passagerare}")
                 passnr += 1
@@ -216,15 +217,6 @@ def sort_buss(buss):
     skrivUt(buss)
 
     return buss
-
-
-
-    
-    
-                
-
-
-    
 
 
 # Skriver ut en lista på alla passagerare inom ett visst åldersspann.     
