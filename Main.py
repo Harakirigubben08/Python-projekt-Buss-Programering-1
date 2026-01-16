@@ -318,12 +318,12 @@ def main():
         """
                                          --- MENY ---
                     Välkommen till buss-simulatorn. Välj ett av alternativen nedan:
-            1. Plocka upp ny passagerare                  2. Låt passagerare gå av
+            1. Plocka upp ny passagerare                  2. Låt passagerare gå av👋
             3. Skriv ut alla passagerare                  4. Beräkna sammanlagd ålder
-            5. Beräkna medelåldern                        6. Hitta äldst person
-            7. Sortera bussen (Ålder fallande)            8. Hitta personer inom ett specifikt åldersspann
-            9. Peta på passagerare                        10. Gå på rast
-            11. Klappa på djuren                          q. Avsluta
+            5. Beräkna medelåldern                        6. Hitta äldsta personen👴
+            7. Sortera bussen (Ålder fallande)♻️          8. Hitta personer inom ett specifikt åldersspann
+            9. Peta på passagerare👉                     10. Gå på rast😴
+            11. Klappa på djuren🐒                        q. Avsluta
         ---------------------------------------------------------------------------------------
         """)
 
