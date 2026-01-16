@@ -122,6 +122,7 @@ def Hanteradinput(variabeltyp, fråga):
 # Lägger till en ny person i bussen.(Egenskapad eller slumpad)
 def plockaUpp(buss):
     Generationsalt = Hanteradinput(int,"1 för att skapa egen karaktär 2 för att slumpa fram en.--> ")
+    print("")
     if Generationsalt == 1:
         Egenplockaupp(buss)
         return(buss)
@@ -139,7 +140,10 @@ def gåAv(buss):
     if len(buss) > 0:
         buss = skrivUt(buss)
         attgåav = Hanteradinput(int,"Se listan ovan, Vem ska gå av? välj nummer --> ")
-        buss.pop(attgåav-1) 
+        if attgåav <= len(buss):
+            buss.pop(attgåav-1) 
+        else:
+            print("FINNS INTE DIN MUPPIGA MUPP..")
         return buss
     else:
         print("Pappskalle bussen är tom..")
@@ -316,7 +320,11 @@ def main():
         """)
 
 
-        menyVal = input("-> ")
+        if len(buss) == 0:
+            print ("Bussen är tomm du måste plocka upp någon. \n")
+            menyVal = "1"
+        else:
+            menyVal = input("-> ")
 
         if menyVal == "1":
             if len(buss) < 25:
