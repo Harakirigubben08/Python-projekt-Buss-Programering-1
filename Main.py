@@ -222,7 +222,7 @@ def sort_buss(buss):
 # Skriver ut en lista på alla passagerare inom ett visst åldersspann.     
 def hitta_passagerare(buss):
     ålderspannövre = Hanteradinput(int,"Vad är maxåldern på passageraren??--> ")
-    ålderspannlägre = Hanteradinput(int,f"Vad är den lägsta ålder?-->")
+    ålderspannlägre = Hanteradinput(int,"Vad är den lägsta ålder?-->")
     print(" ")
     if ålderspannövre > ålderspannlägre and ålderspannövre < 122 and ålderspannlägre > 0:
         for i in buss:  
@@ -258,6 +258,28 @@ def peta(buss):
         print(person.catchphrase)
 
         return
+    
+
+# Klappar på ett djur inom djurtransporten för att sänka busigheten  ---- Vilgot Ska fortsätta
+def klappa(buss):
+    passnr = 1
+    djurtransport = []
+    for passagerare in buss:
+        if passagerare.getBusighet() > 0.7:
+            djurtransport.append(passagerare)
+        else:
+            pass
+    for passagerare in djurtransport:
+        print(f"Busiga passagerare nr {passnr} är {passagerare.getNamn()}")
+        passnr += 1
+    attklappapå = Hanteradinput(int,"Vem vill du klappa på? --->")
+    Orgbusighet = djurtransport[attklappapå-1].
+    
+            
+        
+
+    return(buss)
+
 
 # ------------------------------ Huvudprogram --------------------------------- #
 def main():
@@ -266,9 +288,10 @@ def main():
     p2 = Person("Virre", "Snurr snurr", 0.2, 19)
     p3 = Person("Lellegamer22", "Ima tuck you in real good!", 0.7, 9)
     p4 = Person("Lennart Bladh", "Hi again.", 0.9, 62 )
+    p5 = Person("Johannes Théssen", "Har ni hackat mig eller!??", 0.6, 45)
 
     
-    buss = [p1,p2,p3,p4]
+    buss = [p1,p2,p3,p4,p5]
     menyVal = ""
 
     while menyVal != "q":
@@ -282,7 +305,7 @@ def main():
             5. Beräkna medelåldern                        6. Hitta äldst person
             7. Sortera bussen                             8. Hitta personer inom ett specifikt åldersspann
             9. Peta på passagerare                        10. Gå på rast
-            q. Avsluta
+            11. Klappa på djuren                          q. Avsluta
         ---------------------------------------------------------------------------------------
         """)
 
@@ -326,6 +349,9 @@ def main():
         elif menyVal == "10":
             print("Hurru du din latmask, inge rast för dig inom de närmsta 5 åren")
             pass
+        elif menyVal == "11":
+            pass
+
 
 
 main()
