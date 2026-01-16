@@ -225,14 +225,18 @@ def hitta_passagerare(buss):
     ålderspannlägre = Hanteradinput(int,"Vad är den lägsta ålder?-->")
     print(" ")
     if ålderspannövre > ålderspannlägre and ålderspannövre < 122 and ålderspannlägre > 0:
+        hittade = 0
         for i in buss:  
            a = i
            i = int(i.getÅlder())
            if i < ålderspannövre and i > ålderspannlägre:
                print (a)
+               hittade += 1
            else:
                i += 1 
                pass
+        if hittade == 0:
+            print("Det finns inga passagerare inom ålderspannet")
         return buss
     else:
         print("Lär dig matte och mänsklig biologi!!!🤓☝️😋🙉")
