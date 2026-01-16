@@ -273,7 +273,8 @@ def klappa(buss):
         print(f"Busiga passagerare nr {passnr} är {passagerare.getNamn()}")
         passnr += 1
     attklappapå = Hanteradinput(int,"Vem vill du klappa på? --->")
-    Orgbusighet = djurtransport[attklappapå-1]
+    djurtransport[attklappapå-1].busighet = round(djurtransport[attklappapå-1].busighet - 0.1,2) 
+    
     print(f"Du sänkte passagerare nr {passnr} busighet med 0.1 ")
     
             
