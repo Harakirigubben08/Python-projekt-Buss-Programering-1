@@ -72,8 +72,16 @@ def Egenplockaupp(buss):
                 break  
             except ValueError:
                 print("Mupp...")
+        while True:
+            try:
+                ålder = Hanteradinput(float, "Hur gammal är karaktären? --> ")
+                if not 0<= ålder <=122:
+                    raise ValueError
+                break
+            except ValueError:
+                print("Nu vart åldern skum...")
 
-        ålder = Hanteradinput(float, "Hur gammal är karaktären? --> ")
+
 
         ny_passagerare = Person(namn, catchphrase, busighet, ålder)
         buss.append(ny_passagerare) 
@@ -85,7 +93,7 @@ def Slumpplockaupp(buss):
     namn = rand.choice(Förnamn) + rand.choice(Efternamn)
     catchphrase = rand.choice(Catchphrase)
     busighet = rand.choice(Busighet)
-    ålder = rand.randint(0, 155)
+    ålder = rand.randint(0, 122)
     ny_passagerare=Person(namn,catchphrase,busighet,ålder)
     buss.append(ny_passagerare)
     print(f"Den nya passageraren är: \n{ny_passagerare}")
@@ -228,7 +236,7 @@ def hitta_passagerare(buss):
     ålderspannövre = Hanteradinput(int,"Vad är maxåldern på passageraren??--> ")
     ålderspannlägre = Hanteradinput(int,"Vad är den lägsta ålder?-->")
     print(" ")
-    if ålderspannövre > ålderspannlägre and ålderspannövre < 122 and ålderspannlägre > 0:
+    if ålderspannövre > ålderspannlägre and ålderspannövre <= 122 and ålderspannlägre >= 0:
         hittade = 0
         for i in buss:  
            a = i
