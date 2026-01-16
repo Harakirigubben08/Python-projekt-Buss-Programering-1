@@ -268,7 +268,7 @@ def peta(buss):
         return
     
 
-# Klappar på ett djur inom djurtransporten för att sänka busigheten  ---- Vilgot Ska fortsätta
+# Klappar på ett djur inom djurtransporten för att sänka busigheten 
 def klappa(buss):
     passnr = 1
     djurtransport = []
