@@ -275,19 +275,19 @@ def klappa(buss):
     for passagerare in buss:
         if passagerare.getBusighet() > 0.7:
             djurtransport.append(passagerare)
-        else:
-            pass
+    
+    if len(djurtransport) == 0:
+        print("Djurtransporten är tom, du får fylla på den först.")
+        return buss
+    
     for passagerare in djurtransport:
         print(f"Busiga passagerare nr {passnr} är {passagerare.getNamn()}")
         passnr += 1
     attklappapå = Hanteradinput(int,"Vem vill du klappa på? --->")
     djurtransport[attklappapå-1].busighet = round(djurtransport[attklappapå-1].busighet - 0.1,2) 
     
-    print(f"Du sänkte passagerare nr {passnr} busighet med 0.1 ")
+    print(f"Du sänkte passagerarens busighet med 0.1 ")
     
-            
-        
-
     return(buss)
 
 
